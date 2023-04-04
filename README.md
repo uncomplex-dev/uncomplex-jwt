@@ -1,1 +1,1 @@
-# JSON library
+# Uncomplex JWT library
