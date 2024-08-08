@@ -43,7 +43,7 @@ public class JwtTest {
             System.out.println(Base64.getUrlEncoder().withoutPadding().encodeToString(shaKey));
             System.out.println("--- RS256 Public Key ---");
             System.out.println(Base64.getUrlEncoder().withoutPadding().encodeToString(rsaPublicKey));
-            System.out.println("--- HS256 Private Key ---");
+            System.out.println("--- RS256 Private Key ---");
             System.out.println(Base64.getUrlEncoder().withoutPadding().encodeToString(rsaPrivateKey));
 
         } catch (NoSuchAlgorithmException ex) {

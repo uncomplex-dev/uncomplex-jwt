@@ -7,7 +7,7 @@
     <groupId>dev.uncomplex</groupId>
     <artifactId>uncomplex-jwt</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>uncomplex-jwt</name>
 
     <properties>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>dev.uncomplex</groupId>
             <artifactId>uncomplex-json</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
         </dependency>
 
         <!-- testing -->

@@ -160,11 +160,11 @@ public class Jwt {
                 case HS512:
                     return verifyHs(key, "HmacSHA512");
                 case RS256:
-                    return validateRs(key, "SHA256withRSA");
+                    return verifyRs(key, "SHA256withRSA");
                 case RS384:
-                    return validateRs(key, "SHA384withRSA");
+                    return verifyRs(key, "SHA384withRSA");
                 case RS512:
-                    return validateRs(key, "SHA512withRSA");
+                    return verifyRs(key, "SHA512withRSA");
                 default:
                     return false;
             }
@@ -237,7 +237,7 @@ public class Jwt {
         return this;
     }
 
-    private boolean validateRs(byte[] key, String alg) throws IOException {
+    private boolean verifyRs(byte[] key, String alg) throws IOException {
         try {
             KeyFactory kf = KeyFactory.getInstance("RSA");
             PublicKey publicKey = kf.generatePublic(new X509EncodedKeySpec(key));
@@ -254,8 +254,8 @@ public class Jwt {
     }
 
     private void buildParts() {
-        var h = headers.toJsonBytes();
-        var c = claims.toJsonBytes();
+        var h = headers.toBytes();
+        var c = claims.toBytes();
         parts[0] = Base64.getUrlEncoder().withoutPadding().encodeToString(h);
         parts[1] = Base64.getUrlEncoder().withoutPadding().encodeToString(c);
         parts[2] = Base64.getUrlEncoder().withoutPadding().encodeToString(signature);
